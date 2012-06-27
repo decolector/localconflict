@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+   {% if new %}
+      <div id="detail_header" class="">
+         <h1>{{new.headline}}</h1>
+         <div id="detail_time" class="">
+            {{new.when}}
+         </div>   
+      </div>      
+      <div class="prepend-1 apend-1 prepend-top span-22">
+         <div class="span-16">
+            {% thumbnail new.image "x394" as im %}
+            <a href="{{MEDIA_URL}}{{new.image}}"><img src="{{im.url}}" alt="{{new.headline}}" width="{{im.x}}" height="{{im.y}}"/></a> 
+            {% endthumbnail %}
+         </div>
+         
+         <div id="detail_text" class="prepend-1 prepend-top span-14 ">
+            <p id="id">{{new.body}}</p>      
+         </div> 
+      </div>
+      <div id="social_media" class="prepend-top append-bottom span-18 prepend-2" >
+         <!-- AddThis Button BEGIN -->
+         <div class="addthis_toolbox addthis_default_style ">
+         <a class="addthis_button_preferred_1"></a>
+         <a class="addthis_button_preferred_2"></a>
+         <a class="addthis_button_preferred_3"></a>
+         <a class="addthis_button_preferred_4"></a>
+         <a class="addthis_button_compact"></a>
+         <a class="addthis_counter addthis_bubble_style"></a>
+         </div>
+         <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+         <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d960f9244bdbbc7"></script>
+         <!-- AddThis Button END -->      
+      </div>
+{% else %}
+    <p> No existe tal! </p>
+{% endif %}
+{% endblock content %}

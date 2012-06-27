@@ -1,0 +1,9 @@
+<lc>
+	<server>
+		<osc_receive_port>6662</osc_receive_port>
+                <post_url>http://conflictolocal.co.cc/breaking_news/api/new/</post_url>
+	</server>
+</lc>
+<q3>
+	<screenshot_path>/home/mz/.openarena/ccrma/screenshots/</screenshot_path>
+</q3>
